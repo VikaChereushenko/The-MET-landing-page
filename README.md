@@ -30,4 +30,9 @@ Responsive Design: The landing page is designed to be responsive, ensuring optim
 BEM: Used for componentization of HTML and CSS code.
 
 ## **Getting Started:**
+
+clone the repo
+
+npm install
+
 npm start
