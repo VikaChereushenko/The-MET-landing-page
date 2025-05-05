@@ -20,9 +20,13 @@ Responsive layout ensuring seamless browsing across desktop and mobile devices.
 ## **Technologies Used**
 
 HTML: Used for structuring the content of the webpage.
+
 CSS3: Used for styling and layout of the webpage.
+
 SCSS (Sass): Used as a preprocessor for CSS, allowing for easier management and organization of styles.
+
 Responsive Design: The landing page is designed to be responsive, ensuring optimal viewing experience across various devices and screen sizes.
+
 BEM: Used for componentization of HTML and CSS code.
 
 ## **Getting Started:**
