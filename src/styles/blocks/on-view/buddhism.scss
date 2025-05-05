@@ -1,0 +1,42 @@
+.buddhism {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__photos {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    column-gap: 8px;
+
+    @include on-tablet {
+      grid-template-columns: repeat(6, 1fr);
+      column-gap: 24px;
+    }
+
+    @include on-desktop {
+      grid-template-columns: repeat(12, 1fr);
+    }
+  }
+
+  &__photo {
+    grid-column: span 1;
+
+    @include hover (transform, scale(1.1));
+
+    @include on-tablet {
+      grid-column: span 3;
+
+      &--tablet-hidden {
+        display: none;
+      }
+    }
+
+    @include on-desktop {
+      grid-column: span 4;
+
+      &--tablet-hidden {
+        display: block;
+      }
+    }
+  }
+}

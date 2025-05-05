@@ -1,0 +1,6 @@
+.contacts {
+  display: flex;
+  flex-direction: column;
+
+  @include contacts-style;
+}

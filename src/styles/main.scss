@@ -1,3 +1,68 @@
+@import 'blocks/utils/mixins';
+@import 'blocks/utils/variables';
+@import 'blocks/header/header';
+@import 'blocks/header/top-bar';
+@import 'blocks/header/side-menu';
+@import 'blocks/header/menu';
+@import 'blocks/header/nav';
+@import 'blocks/header/contacts';
+@import 'blocks/title';
+@import 'blocks/museum/museum';
+@import 'blocks/museum/avenue-section';
+@import 'blocks/museum/cloisters-section';
+@import 'blocks/on-view/on-view';
+@import 'blocks/on-view/top';
+@import 'blocks/on-view/old-masters';
+@import 'blocks/on-view/buddhism';
+@import 'blocks/on-view/french-art';
+@import 'blocks/on-view/photos-info';
+@import 'blocks/explore/explore';
+@import 'blocks/explore/details';
+@import 'blocks/contact-us/contact-us';
+@import 'blocks/contact-us/subsection';
+@import 'blocks/contact-us/form';
+@import 'blocks/footer/footer';
+
+* {
+  box-sizing: border-box;
+}
+
+html {
+  scroll-behavior: smooth;
+  font-family: Cinzel, serif;
+}
+
+.page:has(.side__menu:target) {
+  overflow: hidden;
+}
+
 body {
   margin: 0;
 }
+
+.container {
+  width: 100%;
+  max-width: 1260px;
+  margin: 0 auto;
+
+  @include padding;
+}
+
+p {
+  margin: 0;
+}
+
+img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+}
+
+input:-webkit-autofill,
+input:-webkit-autofill:focus,
+textarea:-webkit-autofill,
+textarea:-webkit-autofill:focus {
+  -webkit-text-fill-color: $input-focused-textcolor;
+  -webkit-box-shadow: 0 0 0px 1000px #F8F8FA inset;
+}
+

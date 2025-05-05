@@ -1,0 +1,26 @@
+.on-view {
+  padding-bottom: $padding-block-end;
+
+  &__sub-sections {
+    display: flex;
+    flex-direction: column;
+    gap: 48px;
+  }
+
+  &__button {
+    @include button;
+
+    width: 280px;
+    height: 56px;
+    padding-block: 15px;
+    margin: 40px auto;
+
+    @include on-tablet {
+      width: 392px;
+     }
+
+     @include on-desktop {
+      width: 324px;
+     }
+   }
+}

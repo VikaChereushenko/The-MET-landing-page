@@ -1,0 +1,189 @@
+@mixin on-tablet {
+  @media (min-width: $tablet-min-width) {
+    @content;
+  }
+};
+
+@mixin on-desktop {
+  @media (min-width: $desktop-min-width) {
+    @content;
+  }
+};
+
+@mixin padding {
+  padding-inline: 20px;
+
+  @include on-tablet {
+    padding-inline: 72px;
+  }
+
+  @include on-desktop {
+    padding-inline: 120px;
+  }
+}
+
+@mixin grid {
+  grid-template-columns: repeat(2, 1fr);
+  column-gap: 20px;
+
+  @include on-tablet {
+    grid-template-columns: repeat(6, 1fr);
+    column-gap: 24px;
+  }
+
+  @include on-desktop {
+    grid-template-columns: repeat(12, 1fr);
+  }
+}
+
+@mixin background {
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+}
+
+@mixin hover($property, $toValue){
+  transition: #{$property} 0.3s;
+
+  &:hover {
+    #{$property} : $toValue;
+  }
+}
+
+@mixin section-title {
+   margin: 0;
+   font-size: 32px;
+   font-weight: 700;
+   letter-spacing: -1.5px;
+   line-height: 32px;
+   color: $title-color;
+
+   @include on-tablet {
+    font-size: 48px;
+    line-height: 48px;
+  }
+}
+
+@mixin sub-section-text {
+  margin: 0;
+  line-height: 27px;
+  text-align: left;
+  font-size: 16px;
+  color: $text-color;
+}
+
+@mixin contacts-style {
+  &__avenue {
+    margin-bottom: 8px;
+  }
+
+  &__h3 {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 1px;
+    color: $header-text-color;
+    text-transform: uppercase;
+    margin: 0;
+  }
+
+  &__tel {
+    font-size: 16px;
+    font-weight: 700;
+    line-height: 27px;
+    letter-spacing: 1px;
+    text-align: left;
+    color: $header-text-color;
+    text-decoration: none;
+  }
+}
+
+@mixin museum-sub-section-title {
+  margin: 0;
+  font-size: 24px;
+  font-weight: 700;
+  line-height: 30px;
+  color: $title-color;
+}
+
+@mixin museum-sub-section-styles($class-name){
+  .#{$class-name} {
+    display: flex;
+    flex-direction: column;
+    gap: 16px;
+
+    &__h3 {
+      @include museum-sub-section-title;
+
+      font-weight: $bold-text;
+    }
+
+    &__regular-schedule {
+      display: flex;
+      justify-content: flex-start;
+      gap: 24px;
+    }
+
+    &__hours {
+      @include sub-section-text;
+
+      font-weight: $bold-text;
+      display: flex;
+      flex-direction: column;
+      gap: 8px;
+    }
+
+    &__days {
+      @include sub-section-text;
+
+      display: flex;
+      flex-direction: column;
+
+      gap: 8px;
+    }
+
+    &__holidays {
+      @include sub-section-text;
+
+      &--closed {
+        @include sub-section-text;
+
+        font-weight: $bold-text;
+      }
+    }
+  }
+}
+
+@mixin button {
+    display: block;
+    background-color: $btn-background;
+    border: none;
+
+    font-family: Cinzel, sans-serif;
+    font-weight: 700;
+    text-decoration: none;
+    color: $btn-text-color;
+    text-transform: uppercase;
+    text-align: center;
+    line-height: 27px;
+    font-size: 16px;
+
+    @include hover(background-color,$btn-background-hover);
+
+    &:active {
+      background-color: #EB343D;
+    }
+}
+
+@mixin placeholder-styles {
+  &::placeholder {
+    font-size: 14px;
+    line-height: 20px;
+    text-align: left;
+    font-family: Cinzel, sans-serif;
+
+    color: $placeholder-color;
+  }
+}
+
+

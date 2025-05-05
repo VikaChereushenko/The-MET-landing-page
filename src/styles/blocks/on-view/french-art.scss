@@ -1,0 +1,37 @@
+.french-art {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__photos {
+    display: grid;
+
+    @include grid;
+  }
+
+  &__photo {
+    grid-column: span 1;
+
+    @include hover (transform, scale(1.1));
+
+    @include on-tablet {
+      &--square {
+        grid-column: span 2;
+      }
+
+      &--wider {
+        grid-column: span 4;
+      }
+    }
+
+    @include on-desktop {
+      &--square {
+        grid-column: span 4;
+      }
+
+      &--wider {
+        grid-column: span 8;
+      }
+    }
+  }
+}

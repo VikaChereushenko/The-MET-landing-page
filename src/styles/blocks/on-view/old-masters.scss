@@ -1,0 +1,42 @@
+.old-masters {
+  display: flex;
+  flex-direction: column;
+  gap: 24px;
+
+  &__photos {
+    display: grid;
+
+    @include grid;
+  }
+
+  &__photo{
+    grid-column: span 1;
+
+    @include hover (transform, scale(1.1));
+
+    @include on-tablet {
+
+      &--collection {
+          grid-column: span 4;
+        }
+
+
+      &--portrait {
+        grid-column: span 2;
+      }
+
+    }
+
+      @include on-desktop {
+
+        &--collection {
+          grid-column: span 8;
+        }
+
+        &--portrait {
+          grid-column: span 4;
+        }
+
+      }
+    }
+  }
